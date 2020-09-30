@@ -1,17 +1,16 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="https://picsum.photos/id/0/100/100">
-    <home-photo-gallery msg="Welcome to the awesome photo gallery"/>
-  </div>
+  <main id="app">
+    <gallery-header/>
+    <router-view />
+  </main>
 </template>
 
 <script>
-import HomePhotoGallery from './components/HomePhotoGallery.vue'
-
+import GalleryHeader from '@/components/GalleryHeader.vue';
 export default {
   name: 'App',
   components: {
-    HomePhotoGallery
+    GalleryHeader
   }
 }
 </script>
