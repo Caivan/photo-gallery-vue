@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h1>Image List Works!!</h1>
+    <h1>Image List!!!</h1>
     <label for="pageSizeField">Select the size of each page</label>
     <br>
     <input name="pageSizeField" v-model="pageSize" placeholder="Select The size of Pages (default 100)">
     <br>
-    <button v-if="currentPage > 1" v-on:click="loadPage('previous')" >Previous</button>    
+    <button class="noselect" v-if="currentPage > 1" v-on:click="loadPage('previous')" >Previous</button>    
     <input v-model="inputPageNumber" placeholder="Select Page and Press Enter">    
-    <button v-on:click="loadSpecificPage()" >Go</button>
-    <button v-on:click="loadPage('next')" >Next</button>
+    <button class="noselect" v-on:click="loadSpecificPage()" >Go</button>
+    <button class="noselect" v-on:click="loadPage('next')" >Next</button>
     <image-element
       v-for="image in imagesList"
       v-bind:key="image.id"
@@ -93,5 +93,14 @@ li {
 }
 a {
   color: #42b983;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 </style>
