@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="https://picsum.photos/id/0/100/100">
+    <home-photo-gallery msg="Welcome to the awesome photo gallery"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomePhotoGallery from './components/HomePhotoGallery.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HomePhotoGallery
   }
 }
 </script>
