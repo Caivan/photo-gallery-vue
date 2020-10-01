@@ -1,8 +1,8 @@
 <template>
-  <header class="separador">
+  <header>
     <nav>
       <nav >
-        <div >
+        <div>
           <gallery-icon style="width: 50px"/>
           <span >Awesome Image Gallery !!!</span>
         </div>
@@ -25,7 +25,11 @@ export default {
 <style scoped>
     header {
         display: flex;
-        background: #42b983;
+        background:#008CBA;
         box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+    }
+    header span{        
+        margin: 5px;        
+        font-size: 20px;
     }
 </style>
