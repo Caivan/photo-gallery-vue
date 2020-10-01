@@ -1,13 +1,13 @@
 <template>
-  <header>
+  <header class="separador">
     <nav>
-      <nav class="flex items-center justify-between flex-wrap bg-green-400 p-6">
-        <div class="flex items-center flex-shrink-0 text-white mr-6">
-          <gallery-icon style="width: 100px"/>
-          <span class="font-semibold text-xl tracking-tight">Awesome Image Gallery !!!</span>
+      <nav >
+        <div >
+          <gallery-icon style="width: 50px"/>
+          <span >Awesome Image Gallery !!!</span>
         </div>
-        <div class="hidden sm:block w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div class="text-sm lg:flex-grow"></div>
+        <div >
+          <div ></div>
         </div>
       </nav>
     </nav>
@@ -22,3 +22,10 @@ export default {
   components: { GalleryIcon }
 };
 </script>
+<style scoped>
+    header {
+        display: flex;
+        background: #42b983;
+        box-shadow: 0px 0px 8px rgba(0,0,0,.6);
+    }
+</style>
