@@ -163,7 +163,13 @@ button {
 
 @media screen and (max-width: 760px) {
   .imagecontainer {
-      grid-template-columns: 70%;
+      grid-template-columns: 50% 50%;
+  }
+  
+}
+@media screen and (max-width: 412px) {
+  .imagecontainer {
+      grid-template-columns: 100%;
   }
   
 }

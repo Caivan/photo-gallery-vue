@@ -30,12 +30,12 @@
       <p># {{ imageElement.id }}</p>
       <image-modal ref="imageModal" name="imageModal">
         <template v-slot:header>
-          <h1>Download</h1>
+          <h1>Download # {{ imageElement.id }} - {{ imageElement.author }}</h1>
         </template>
         <template v-slot:body>
-          <iframe
-            width="560"
-            height="315"
+          <iframe    
+            width="250px"        
+            height="300px"        
             v-bind:src="imageElement.url"
             v-bind:key="imageElement.id"
           ></iframe>
