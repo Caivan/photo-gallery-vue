@@ -56,6 +56,7 @@
 <script>
 import ImageElement from "@/components/ImageElement.vue";
 import picusmApi from "@/services/picsum.api.js";
+import _ from 'lodash';
 
 export default {
   name: "ImageList",
@@ -79,8 +80,21 @@ export default {
   created() {
     picusmApi.getAllImages().then((imagesResponse) => this.imagesList = imagesResponse);
   }, // End Created
+  watch: {
+    pageSize: _.debounce(function () {
+        this.pageSize = this.pageSize > 100 || this.pageSize < 1 ? 100 : this.pageSize;
+        picusmApi.getAllImages(this.inputPageNumber, this.pageSize)
+          .then((imagesResponse) => {
+            if (imagesResponse && imagesResponse.length > 0) {
+              this.imagesList = imagesResponse;
+            } else {
+              this.inputPageNumber = this.currentPage;
+            }
+          });
+    }, 500)
+  },
   methods: {
-    loadPage(stepDirection) {
+    loadPage: _.debounce(function (stepDirection) {
       if (this.currentPage >= 1) {
         stepDirection === "next"
           ? (this.currentPage += 1)
@@ -98,8 +112,8 @@ export default {
             }
           });
       }
-    }, // End function
-    loadSpecificPage() {
+    }, 500), // End function
+    loadSpecificPage: _.debounce(function () {
       if (this.currentPage != parseInt(this.inputPageNumber)) {
         let pageNumber = parseInt(this.inputPageNumber);
         picusmApi
@@ -113,7 +127,7 @@ export default {
             }
           });
       }
-    }, // End function
+    }, 100), // End function
   }, // End Methods
 };
 </script>

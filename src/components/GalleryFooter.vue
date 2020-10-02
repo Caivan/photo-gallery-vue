@@ -9,10 +9,10 @@
 </template>
 <style scoped>
   
-footer { 
+footer {     
     color: white; 
     background-color: black; 
     padding: 1% 10%; 
-    text-align: center;     
+    text-align: center;    
 }
 </style>
