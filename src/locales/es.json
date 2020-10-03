@@ -1,5 +1,15 @@
 {
-    "next-button": "siguiente",
-    "previous-button": "anterior",
-    "size-page-label": "Tamaño de pagina"
+    "next-button": "Siguiente",
+    "go-button": "IR",    
+    "previous-button": "Anterior",
+    "size-page-label": "Tamaño de pagina",    
+    "filter-author-label": "Filtrar por autor",
+    "download-button": "Descargar",
+    "blur-button": "Borrosa",
+    "grayscale-button": "Escala de gris",
+    "normal-button": "Normal",
+    "modal-title": "Descargar",
+    "no-results-message": "Lo sentimos,  la pagina que ingresaste no tiene imagenes",
+    "last-page-message": "Has llegado a la ultima pagina de la galeria",
+    "first-page-message": "Estas enla primera pagina"
 }

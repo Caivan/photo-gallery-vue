@@ -2,10 +2,11 @@
   <div>
     <div class="navigation item">
       <div>
-        <label for="pageSizeField" class="noselect"
-          >Set the size of each page</label
-        >
+        <label for="pageSizeField" class="noselect">
+          {{ $t('size-page-label') }}
+        </label>
         <input
+          class = "input__text"
           name="pageSizeField"
           v-model="pageSize"
           placeholder="Select The size of Pages (default 100)"
@@ -14,8 +15,11 @@
           min="1"
         />
         <br />
-        <label for="filter" class="noselect">Filter by author</label>
+        <label for="filter" class="noselect">
+          {{ $t('filter-author-label') }}
+        </label>
         <input
+          class = "input__text"
           name="filter"
           v-model="filterAuthor"
           placeholder="author"
@@ -28,10 +32,11 @@
           v-if="!isFirstPage"
           @click="loadPage('previous')"
         >
-          Previous
+          {{ $t('previous-button') }}          
         </button>
 
         <input
+          class = "input__page"
           v-model="inputPageNumber"
           placeholder="Select Page"
           type="number"
@@ -40,14 +45,14 @@
         <button           
           class="noselect" 
           @click="loadPage('specific')">
-          Go
+          {{ $t('go-button') }}
         </button>
         <button
           v-if="!isLastPage"
           class="noselect"
           @click="loadPage('next')"
         >
-          Next
+          {{ $t('next-button') }}
         </button>
       </div>
     </div>
@@ -165,7 +170,24 @@ button {
   justify-content: center;
   margin: 20px;
 }
-
+.input__text {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.input__page {
+  width: 50px;
+  padding: 5px 20px;
+  margin: 15px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+} 
 @media screen and (max-width: 760px) {
   .imagecontainer {
     grid-template-columns: 50% 50%;

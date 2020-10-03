@@ -1,7 +1,15 @@
 {
-    "next-button": "next",
-    "previous-button": "previous",
+    "next-button": "Next",
+    "go-button": "GO",
+    "previous-button": "Back",
     "size-page-label": "Set size page",
+    "filter-author-label": "Filter by author",
+    "download-button": "Download",
+    "blur-button": "Blur",
+    "grayscale-button": "Grayscale",
+    "normal-button": "Normal",
+    "modal-title": "Download",
+    "close-button": "Close",
     "no-results-message": "Sorry! the requested page doesn't have any image to show",
     "last-page-message": "You've reached the last page of the gallery",
     "first-page-message": "You are on the first page"

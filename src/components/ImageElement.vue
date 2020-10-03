@@ -5,9 +5,9 @@
       imageElement.height <= imageElement.width ? 'level-' + 2 : 'level-1',
     ]"
   >
-    <a class="noselect" v-bind:href="imageElement.download_url" target="_blank"
-      >Download</a
-    >
+    <a class="noselect" v-bind:href="imageElement.download_url" target="_blank" >
+      {{ $t('download-button') }}
+    </a>
     <img
       v-if="builtImageUrl"
       v-bind:src="builtImageUrl"
@@ -17,17 +17,19 @@
     <div>
       <div>
         <button class="noselect" v-on:click="createImageURL('blur')">
-          Blur
+          {{ $t('blur-button') }}
         </button>
         <button class="noselect" v-on:click="createImageURL('grayscale')">
-          Grayscale
+          {{ $t('grayscale-button') }}
         </button>
-        <button class="noselect" v-on:click="createImageURL()">Normal</button>
+        <button class="noselect" v-on:click="createImageURL()">
+          {{ $t('normal-button') }}          
+        </button>
       </div>
       <p class="noselect card__author">
         {{ imageElement.author }}
       </p>
-      <p># {{ imageElement.id }}</p>
+      <p>{{ $t('modal-title') }} # {{ imageElement.id }}</p>
       <image-modal ref="imageModal" name="imageModal">
         <template v-slot:header>
           <h1>Download # {{ imageElement.id }} - {{ imageElement.author }}</h1>
@@ -46,7 +48,7 @@
               class="btn btn--secondary"
               @click="$refs.imageModal.closeModal()"
             >
-              Close
+              {{ $t('close-button') }}              
             </button>
           </div>
         </template>
