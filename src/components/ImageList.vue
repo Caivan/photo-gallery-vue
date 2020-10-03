@@ -109,16 +109,20 @@ export default {
   },
   methods: {
     makeDataRequest (specificPage=this.currentPage){
+      // this.inputPageNumber = this.currentPage;
+      console.log('page:', specificPage, this.currentPage);
       picusmApi.getAllImages(specificPage, this.pageSize ? this.pageSize : 100 ).then((response) => {            
             response.results.then (results => {
                 if (results && results.length > 0){                  
-                  this.isLastPage = response.isLastPage,
-                  this.isFirstPage = response.isFirstPage,
+                  this.isLastPage = response.isLastPage;
+                  this.isFirstPage = response.isFirstPage;
                   this.imagesList=results;
-                  this.messageUser = ''
-                } else {
-                  this.messageUser = 'Any data returned for the requested page';
+                  this.messageUser = '';
+                  this.currentPage = specificPage;                  
+                } else {           
+                  this.messageUser = this.$i18n.t('no-results-message');
                 }
+                this.inputPageNumber = this.currentPage;
             });            
       });
     },
@@ -135,8 +139,7 @@ export default {
               this.makeDataRequest (this.inputPageNumber);
           }
         }        
-      } 
-      this.inputPageNumber = this.currentPage;
+      }       
     }, 500), // End function
   }, // End Methods
 };
@@ -180,7 +183,7 @@ button {
   box-sizing: border-box;
 }
 .input__page {
-  width: 50px;
+  width: 80px;
   padding: 5px 20px;
   margin: 15px 0;
   display: inline-block;

@@ -1,4 +1,5 @@
 <template>
+<div class="container">
   <header class="header">    
         <div>
           <gallery-icon class="header__icon"/>
@@ -9,6 +10,7 @@
         </select>            
         
   </header>
+</div>
 </template>
 
 <script>
@@ -23,13 +25,20 @@ export default {
 };
 </script>
 <style scoped>
+    .container {
+      position: absolute;      
+    }
     .header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
         display: flex;
         flex-direction: row;
         background:#008CBA;
         box-shadow: 0px 0px 8px rgba(0,0,0,.6);
         justify-content: space-between;
-        align-items: center;
+        align-items: center;                
     }
     .header__icon {
         width: 60px;
@@ -52,7 +61,7 @@ export default {
         height: 100%;
         width: 100%;
         padding: 8px 4px;
-        margin: 8px 0;
+        margin: 8px 10px;
         display: inline-block;
         border: 1px solid #ccc;        
         box-sizing: border-box;

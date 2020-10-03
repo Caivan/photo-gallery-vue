@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="footer">
             <div>
                 <p>Carlos Ivan Rivera</p> 
                 <p>caivan2@gmail.com</p> 
@@ -9,9 +9,9 @@
 </template>
 <style scoped>
   
-footer {     
+.footer {     
     color: white; 
-    background-color: black; 
+    background-color: #008CBA; 
     padding: 1% 10%; 
     text-align: center;    
 }

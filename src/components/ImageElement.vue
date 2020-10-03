@@ -59,8 +59,8 @@
 
 <script>
 import ImageModal from "@/components/ImageModal.vue";
-const heightReductionSizeRate = 0.09;
-const defaultWidth = 0.09;
+const heightReductionSizeRate = 0.1;
+const widthReductionSizeRate = 0.1;
 export default {
   name: "ImageElement",
   components: {
@@ -73,7 +73,7 @@ export default {
     createImageURL(options = null) {
       this.builtImageUrl = `https://picsum.photos/id/${
         this.imageElement.id
-      }/${parseInt(this.imageElement.width * defaultWidth)}/${parseInt(
+      }/${parseInt(this.imageElement.width * widthReductionSizeRate)}/${parseInt(
         this.imageElement.height * heightReductionSizeRate
       )}?${options ? options : ""}`;
     },
