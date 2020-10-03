@@ -9,8 +9,24 @@ const maximunPageSize = 100;
  * Make the request to the Picsum API, getting a list of Images
  */
 function getAllImages (pageIndex = 1, pageSize = maximunPageSize) {
-    return fetch (`${picsumApiUrl}${allImagesEndpont}?page=${pageIndex}&limit=${pageSize}`).then ( res => res.json());
+    return fetch (`${picsumApiUrl}${allImagesEndpont}?page=${pageIndex}&limit=${pageSize}`).then (
+        (res) => {
+            let linkResult = checkHeaderLink (res.headers.get('link'));
+            return  {
+                ...linkResult,                
+                results: res.json()
+            }
+        }         
+    );
 }
+
+function checkHeaderLink (link) {
+    return {        
+        isFirstPage: !link.includes('prev'),
+        isLastPage: !link.includes('next')
+    }    
+}
+
 /**
  * Make a single image request
  * @param {*} imageId Id of the image to request information
