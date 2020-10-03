@@ -1,0 +1,8 @@
+{
+    "next-button": "next",
+    "previous-button": "previous",
+    "size-page-label": "Set size page",
+    "no-results-message": "Sorry! the requested page doesn't have any image to show",
+    "last-page-message": "You've reached the last page of the gallery",
+    "first-page-message": "You are on the first page"
+}
