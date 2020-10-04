@@ -10,8 +10,13 @@ You can check the live version deployed on Netlify (https://vsimagegallery.netli
   - Set the number of images per page (Page size)
   - Navigate to next and revious pages
   - Go to an specific page. If the page doesn't have images the system remains in the current page.
-  - Switch the appereance of an image among: Blur, Grayscale & Normal state.  
-- When click on an image shows a modal panel using an iFrame to show the unsplash site of the image selected. But the unsplash site has X-Frame-Options seted to Sameorigin
+  - Switch the appereance of an image among: Blur, Grayscale & Normal state.
+  - Filter by Author's name
+  - Switching language of the system (English/Spanish)
+- When click on an image shows a modal panel using an iFrame to show the unsplash site of the image selected. ()
+  - But the unsplash site has X-Frame-Options seted to Sameorigin and doesn't work if you don't have an iFrame allow plugin installed on your browser
+  - I recommend using the iFrame Allow plugin on Chrome
+  
 
 ## Project setup
 ```
