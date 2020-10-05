@@ -109,8 +109,6 @@ export default {
   },
   methods: {
     makeDataRequest (specificPage=this.currentPage){
-      // this.inputPageNumber = this.currentPage;
-      console.log('page:', specificPage, this.currentPage);
       picusmApi.getAllImages(specificPage, this.pageSize ? this.pageSize : 100 ).then((response) => {            
             response.results.then (results => {
                 if (results && results.length > 0){                  
